@@ -1,0 +1,60 @@
+{
+	"name": "datatransformation8",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "8_scd_sqldb_prop",
+						"type": "DatasetReference"
+					},
+					"name": "source8"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "8_AzureSqlTable_prop",
+						"type": "DatasetReference"
+					},
+					"name": "sink8",
+					"rejectedDataLinkedService": {
+						"referenceName": "LS_DataLake",
+						"type": "LinkedServiceReference"
+					}
+				}
+			],
+			"transformations": [
+				{
+					"name": "alterRow8"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Employee_ID as short,",
+				"          First_Name as string,",
+				"          Salary as integer,",
+				"          Location as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     partitionBy('hash', 1)) ~> source8",
+				"source8 alterRow(upsertIf(1==1),",
+				"     partitionBy('hash', 1)) ~> alterRow8",
+				"alterRow8 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     partitionBy('hash', 1)) ~> sink8"
+			]
+		}
+	}
+}

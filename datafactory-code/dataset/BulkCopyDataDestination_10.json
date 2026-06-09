@@ -1,0 +1,19 @@
+{
+	"name": "BulkCopyDataDestination_10",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DataLake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "tablescopy",
+				"fileSystem": "bulkcopy"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

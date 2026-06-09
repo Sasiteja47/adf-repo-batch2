@@ -1,0 +1,15 @@
+{
+	"name": "b2datafactory28may",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b90bd259-1a7e-4f3d-bb0f-e8133b6ee0a1",
+		"tenantId": "cd44f675-7f51-4948-99d4-528e0348067c"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"name": "4_Prod_ReadyEventTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "4_ade_prodredy_pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/source/blobs/csv_files/sales_invoice.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/7dd8a56d-9ed6-456e-af9d-b8f0d01251d8/resourceGroups/B2-RG-CI/providers/Microsoft.Storage/storageAccounts/b2datalake28may",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
