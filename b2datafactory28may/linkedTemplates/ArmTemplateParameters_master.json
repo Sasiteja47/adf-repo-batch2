@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "b2datafactory28may"
+		},
+		"LS_AWS_S3_secretAccessKey": {
+			"value": ""
+		},
+		"LS_AzureSqlDatabase_password": {
+			"value": ""
+		},
+		"LS_DataLake_accountKey": {
+			"value": ""
+		},
+		"LS_MYSQL_DB_password": {
+			"value": ""
+		},
+		"LS_AWS_S3_properties_typeProperties_accessKeyId": {
+			"value": "AKIAV3B7YX2L2WJATNF3"
+		},
+		"LS_AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "sqldatabaseserverjune.database.windows.net"
+		},
+		"LS_AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "AZURESQLDB-CI"
+		},
+		"LS_AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "adeazuresql"
+		},
+		"LS_DataLake_properties_typeProperties_url": {
+			"value": "https://b2datalake28may.dfs.core.windows.net/"
+		},
+		"LS_Github_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"LS_MYSQL_DB_properties_typeProperties_server": {
+			"value": "127.0.0.1"
+		},
+		"LS_MYSQL_DB_properties_typeProperties_database": {
+			"value": "adesql"
+		},
+		"LS_MYSQL_DB_properties_typeProperties_username": {
+			"value": "root"
+		},
+		"4_Prod_ReadyEventTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/7dd8a56d-9ed6-456e-af9d-b8f0d01251d8/resourceGroups/B2-RG-CI/providers/Microsoft.Storage/storageAccounts/b2datalake28may"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
